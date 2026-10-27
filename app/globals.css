@@ -1,0 +1,90 @@
+:root {
+  --fondo: #f4f1e8;
+  --superficie: #ffffff;
+  --texto: #1d2a22;
+  --texto-suave: #5b6b60;
+  --verde: #1f4d34;
+  --verde-claro: #e3efe2;
+  --terracota: #c8673b;
+  --borde: #dcd6c6;
+  --error-fondo: #fbe9e4;
+  --error-texto: #8a2b12;
+  --radio: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+a { color: inherit; }
+
+.contenedor { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+.encabezado { background: var(--verde); color: #fff; }
+.encabezado__fila { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.marca { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+.marca img { border-radius: 8px; }
+.encabezado nav a { text-decoration: none; opacity: 0.9; }
+.encabezado nav a:hover { opacity: 1; text-decoration: underline; }
+
+main { padding-top: 28px; padding-bottom: 40px; min-height: 70vh; }
+
+h1 { font-size: 1.9rem; margin: 0 0 4px; color: var(--verde); }
+h2 { font-size: 1.1rem; margin: 0; }
+.subtitulo { color: var(--texto-suave); margin: 0 0 24px; }
+
+.filtros { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
+.filtros label { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--texto-suave); }
+.filtros__buscar { flex: 1 1 240px; }
+.filtros input, .filtros select {
+  font: inherit; font-size: 1rem; padding: 10px 12px;
+  border: 1px solid var(--borde); border-radius: 10px; background: var(--superficie); color: var(--texto);
+}
+.filtros input:focus, .filtros select:focus { outline: 2px solid var(--verde); outline-offset: 1px; }
+.contador { font-size: 0.85rem; color: var(--texto-suave); margin: 4px 0 16px; }
+
+.grilla { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.tarjeta {
+  position: relative; background: var(--superficie); border: 1px solid var(--borde);
+  border-radius: var(--radio); transition: transform 0.15s, box-shadow 0.15s;
+}
+.tarjeta:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(31, 77, 52, 0.12); }
+.tarjeta__enlace { display: block; padding: 18px 52px 18px 18px; text-decoration: none; }
+.especie { font-style: italic; color: var(--texto-suave); margin: 2px 0 10px; }
+.etiquetas { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+.etiqueta { background: var(--verde-claro); color: var(--verde); border-radius: 999px; padding: 2px 10px; font-size: 0.8rem; }
+
+.favorito {
+  font: inherit; cursor: pointer; border: 1px solid var(--borde); background: var(--superficie);
+  color: var(--terracota); border-radius: 999px; padding: 8px 14px; font-size: 1rem;
+}
+.favorito--activo { background: var(--terracota); color: #fff; border-color: var(--terracota); }
+.favorito--chico { position: absolute; top: 12px; right: 12px; padding: 2px 9px; font-size: 1.1rem; }
+
+.volver { display: inline-block; margin-bottom: 16px; color: var(--verde); }
+
+.detalle { background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--radio); padding: 24px; }
+.detalle__cabecera { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.detalle h2 { margin-top: 20px; color: var(--verde); }
+.datos { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 16px 0 0; }
+.datos div { background: var(--verde-claro); border-radius: 10px; padding: 12px; }
+.datos dt { font-size: 0.8rem; color: var(--texto-suave); }
+.datos dd { margin: 2px 0 0; font-weight: 600; }
+
+.aviso { background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--radio); padding: 16px; margin-bottom: 16px; }
+.aviso p { margin: 4px 0 0; }
+.aviso--error { background: var(--error-fondo); border-color: #f0c2b3; color: var(--error-texto); }
+
+.sin-conexion { text-align: center; padding: 40px 0; }
+.sin-conexion img { border-radius: 20px; }
+.sin-conexion p { max-width: 460px; margin: 8px auto 20px; color: var(--texto-suave); }
+.boton { display: inline-block; background: var(--verde); color: #fff; text-decoration: none; padding: 10px 18px; border-radius: 10px; }
+
+.pie { font-size: 0.8rem; color: var(--texto-suave); padding-top: 16px; padding-bottom: 24px; border-top: 1px solid var(--borde); }
